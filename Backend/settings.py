@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-tb)p)u^xrx0$*f%9*n+l8r_3(k)g)pbk^=c=j)5eiz5dl0#^$g
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['inmunodetectabackend.azurewebsites.net']
+ALLOWED_HOSTS = ['inmunodetectabackend.azurewebsites.net','127.0.0.1']
 
 
 # Application definition
@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'autoinmune',
-        'USER': 'autoinmune_user',
-        'PASSWORD': 'LzZZZO9fgaXZTzJm5pFpmf1GMcLRVq52',
-        'HOST': 'dpg-cihfu2lgkuvojjed93l0-a.oregon-postgres.render.com',
+        'NAME': 'postgres',
+        'USER': 'azure_admin',
+        'PASSWORD': 'rootuser99#',
+        'HOST': 'inmunodetectadb.postgres.database.azure.com',
         'DATABASE_PORT': '5432' ,
 
     }
