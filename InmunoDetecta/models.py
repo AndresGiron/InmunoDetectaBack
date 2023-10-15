@@ -22,6 +22,7 @@ class Diagnostico(models.Model):
     cedula_paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     cedula_medico = models.ForeignKey(Medico, on_delete=models.CASCADE)
     diagnostico_completo = models.JSONField()
+    #Variable para la aprobacion de los diagnosticos
     diagnostico_aprobacion = models.BooleanField(null=True, default=None)
     
 class Usuario(AbstractUser):
