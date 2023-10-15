@@ -21,7 +21,8 @@ class Diagnostico(models.Model):
     diagnostico_fecha = models.DateField(auto_now_add=True)
     cedula_paciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)
     cedula_medico = models.ForeignKey(Medico, on_delete=models.CASCADE)
-    diagnostico_completo = models.JSONField() 
+    diagnostico_completo = models.JSONField()
+    diagnostico_aprobacion = models.BooleanField(null=True, default=None)
     
 class Usuario(AbstractUser):
     email = models.EmailField(unique=True)
