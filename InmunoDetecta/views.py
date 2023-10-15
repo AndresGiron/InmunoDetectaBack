@@ -220,3 +220,19 @@ class HacerPrediccionesView(APIView):
         data = request.data  # Datos enviados en la solicitud POST
         result = hacerPrediccion(data)  # Llama a tu función para hacer predicciones
         return Response(result, status=status.HTTP_200_OK)
+    
+class DiagnosticoUpdateView(generics.UpdateAPIView):
+    queryset = Diagnostico.objects.all()
+    serializer_class = DiagnosticoSerializerGeneralReport
+    lookup_field = 'diagnostico_id'  # Usar el campo correcto para buscar el diagnóstico.
+
+    def update(self, request, *args, **kwargs):
+        instance = self.get_object()
+        new_aprobacion = request.data.get('diagnostico_aprobacion', None)
+
+        if new_aprobacion is not None:
+            instance.diagnostico_aprobacion = new_aprobacion
+            instance.save()
+            return Response({'message': 'Diagnóstico actualizado correctamente.'})
+
+        return Response({'message': 'Parámetro diagnostico_aprobacion faltante o inválido.'}, status=400)
