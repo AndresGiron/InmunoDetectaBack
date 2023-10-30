@@ -62,4 +62,5 @@ urlpatterns = [
     path('paciente/<str:correo>/update/', PacienteUpdateView.as_view(), name='update_paciente'),
     path('medico/<str:correo>/update/', MedicoUpdateView.as_view(), name='update_medico'),
     path('diagnostico-update/<str:diagnostico_id>/', DiagnosticoUpdateView.as_view(), name='diagnostico-update'),
+    #
 ]
