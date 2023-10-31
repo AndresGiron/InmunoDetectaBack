@@ -58,7 +58,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Agrega aquí los dominios permitidos
+    "http://localhost:3000", "https://inmunodetecta.me" # Agrega aquí los dominios permitidos
 ]
 
 ROOT_URLCONF = 'Backend.urls'
